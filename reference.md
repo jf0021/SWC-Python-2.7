@@ -73,16 +73,7 @@ subtitle: Reference
 *   Containers like lists and dictionaries will generate errors if you try to access items in them that do not exist. For lists, this type of error is called an `IndexError`; for dictionaries, it is called a `KeyError`.
 *   Trying to read a file that does not exist will give you an `IOError`. Trying to read a file that is open for writing, or writing to a file that is open for reading, will also give you an `IOError`.
 
-## [Defensive Programming](08-defensive.html)
-
-*   Program defensively, i.e., assume that errors are going to arise, and write code to detect them when they do.
-*   Put assertions in programs to check their state as they run, and to help readers understand how those programs are supposed to work.
-*   Use preconditions to check that the inputs to a function are safe to use.
-*   Use postconditions to check that the output from a function is safe to use.
-*   Write tests before writing code in order to help determine exactly what that code is supposed to do.
-
-
-## [Debugging](09-debugging.html)
+## [Debugging](08-debugging.html)
 
 *   Know what code is supposed to do *before* trying to debug it.
 *   Make it fail every time.
@@ -91,7 +82,7 @@ subtitle: Reference
 *   Keep track of what you've done.
 *   Be humble.
 
-## [Command-Line Programs](10-cmdline.html)
+## [Command-Line Programs](09-cmdline.html)
 
 *   The `sys` library connects a Python program to the system it is running on.
 *   The list `sys.argv` contains the command-line arguments that a program was run with.

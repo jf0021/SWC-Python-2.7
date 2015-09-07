@@ -98,15 +98,7 @@
 <li>Containers like lists and dictionaries will generate errors if you try to access items in them that do not exist. For lists, this type of error is called an <code>IndexError</code>; for dictionaries, it is called a <code>KeyError</code>.</li>
 <li>Trying to read a file that does not exist will give you an <code>IOError</code>. Trying to read a file that is open for writing, or writing to a file that is open for reading, will also give you an <code>IOError</code>.</li>
 </ul>
-<h2 id="defensive-programming"><a href="08-defensive.html">Defensive Programming</a></h2>
-<ul>
-<li>Program defensively, i.e., assume that errors are going to arise, and write code to detect them when they do.</li>
-<li>Put assertions in programs to check their state as they run, and to help readers understand how those programs are supposed to work.</li>
-<li>Use preconditions to check that the inputs to a function are safe to use.</li>
-<li>Use postconditions to check that the output from a function is safe to use.</li>
-<li>Write tests before writing code in order to help determine exactly what that code is supposed to do.</li>
-</ul>
-<h2 id="debugging"><a href="09-debugging.html">Debugging</a></h2>
+<h2 id="debugging"><a href="08-debugging.html">Debugging</a></h2>
 <ul>
 <li>Know what code is supposed to do <em>before</em> trying to debug it.</li>
 <li>Make it fail every time.</li>
@@ -115,7 +107,7 @@
 <li>Keep track of what you’ve done.</li>
 <li>Be humble.</li>
 </ul>
-<h2 id="command-line-programs"><a href="10-cmdline.html">Command-Line Programs</a></h2>
+<h2 id="command-line-programs"><a href="09-cmdline.html">Command-Line Programs</a></h2>
 <ul>
 <li>The <code>sys</code> library connects a Python program to the system it is running on.</li>
 <li>The list <code>sys.argv</code> contains the command-line arguments that a program was run with.</li>
