@@ -265,10 +265,11 @@ main()</code></pre>
     script = sys.argv[<span class="dv">0</span>]
     action = sys.argv[<span class="dv">1</span>]
     filenames = sys.argv[<span class="dv">2</span>:]
-    <span class="kw">assert</span> action in [<span class="st">&#39;--min&#39;</span>, <span class="st">&#39;--mean&#39;</span>, <span class="st">&#39;--max&#39;</span>], \
-           <span class="co">&#39;Action is not one of --min, --mean, or --max: &#39;</span> + action
-    <span class="kw">for</span> f in filenames:
-        process(f, action)
+    <span class="kw">if</span> not action in [<span class="st">&#39;--min&#39;</span>, <span class="st">&#39;--mean&#39;</span>, <span class="st">&#39;--max&#39;</span>]:
+        <span class="dt">print</span> <span class="st">&#39;Action is not one of --min, --mean, or --max: &#39;</span>
+    <span class="kw">else</span>:
+        <span class="kw">for</span> f in filenames:
+            process(f, action)
 
 <span class="kw">def</span> process(filename, action):
     data = numpy.loadtxt(filename, delimiter=<span class="st">&#39;,&#39;</span>)
@@ -308,13 +309,14 @@ count = <span class="dv">0</span>
     script = sys.argv[<span class="dv">0</span>]
     action = sys.argv[<span class="dv">1</span>]
     filenames = sys.argv[<span class="dv">2</span>:]
-    <span class="kw">assert</span> action in [<span class="st">&#39;--min&#39;</span>, <span class="st">&#39;--mean&#39;</span>, <span class="st">&#39;--max&#39;</span>], \
-           <span class="co">&#39;Action is not one of --min, --mean, or --max: &#39;</span> + action
-    <span class="kw">if</span> <span class="dt">len</span>(filenames) == <span class="dv">0</span>:
-        process(sys.stdin, action)
+    <span class="kw">if</span> not action in [<span class="st">&#39;--min&#39;</span>, <span class="st">&#39;--mean&#39;</span>, <span class="st">&#39;--max&#39;</span>]:
+        <span class="dt">print</span> <span class="st">&#39;Action is not one of --min, --mean, or --max: &#39;</span>
     <span class="kw">else</span>:
-        <span class="kw">for</span> f in filenames:
-            process(f, action)</code></pre>
+        <span class="kw">if</span> <span class="dt">len</span>(filenames) == <span class="dv">0</span>:
+            process(sys.stdin, action)
+        <span class="kw">else</span>:
+            <span class="kw">for</span> f in filenames:
+                process(f, action)</code></pre>
 <p>Let’s try it out:</p>
 <pre class="input"><code>$ python readings-06.py --mean small-01.csv</code></pre>
 <pre class="output"><code>0.333333333333
